@@ -1,0 +1,322 @@
+.rental {
+    .wrapper {
+        .container {
+            padding: 0;
+            .row {
+                .left {
+                    width: auto;
+                    height: 639px;
+                    background: $header-cl;
+                    padding: 80px 0 0 20px;
+                    .number {
+                        width: 120px;
+                        height: 118px;
+                        background-color: $yellow-cl;
+                        text-align: center;
+                        position: relative;
+                        cursor: pointer;
+                        &-01 {
+                                @include mid();
+                               h3 {
+                                @include text(11px, Pb, nomal, $text-black-cl, none);
+                               }
+                            p {
+                                font-size: 30px;
+                                @include text(60px, fstudio, nomal, $text-black-cl, none);
+                            }
+                        }
+                    }
+                    .text {
+                        h1 {
+                            @include text(32px, Pb, 30px, $white-cl, none);
+                            padding: 30px 0;
+                        }
+                        h2 {
+                            @include text(12px, fmain, 20px, $white-cl, none);
+                            letter-spacing: 2px;
+                            margin-bottom: 20px;
+                        }
+                        .txt {
+                            @include text(12px, fmain, 20px, $white-cl, none);
+                        }
+                    }
+                }
+                .right {
+                    margin-top: 70px;
+                    .row {
+                        .text {
+                            h3 {
+                                @include text(28px, Pb, 30px, #39382f, none); 
+                            }
+                        }
+                    }
+                }
+                .infor {
+                    margin-top: 45px;
+                    .row {
+                        .form {
+                            &-group {
+                                #message {
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .booking {
+                    margin-top: 30px;
+                    .row {
+                        h3 {
+                            @include text(28px, Pb, 30px, #39382f, none); 
+                        }
+                    }
+                }
+                .studio__rental {
+                    margin-top: 30px;
+                    .row {
+                        h3 {
+                            @include text(12px, Pb, 20px, #000, none); 
+                        }
+                    }
+                }
+                .studio-list {
+                    margin-top: 20px;
+                    .row {
+                        .box {
+                            display: flex;
+                            .item {
+                                width: 39px;
+                                height: 39px;
+                                @include midflex();
+                                background: #111111;
+                                margin-right: 20px;
+                                cursor: pointer;
+                                p {
+                                @include text(24px, fstudio, nomal, #b4b4b4, none);
+                                }
+                            }
+                            .active {
+                                background: $yellow-cl;
+                                p {
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+                .requi {
+                    margin-top: 30px;
+                    .row {
+                        h3 {
+                            @include text(12px, fmain, 20px, #000, none); 
+                        }
+                    }
+                }
+                .mess {
+                    margin-top: 30px;
+                    .row {
+                        .form {
+                            &-group {
+                                p {
+                                    @include text(12px, fmain, 20px, #000, none); 
+                                    font-style: italic;
+                                }
+                            }
+                        }
+                    }
+                }
+                .duration {
+                    h3 {
+                        @include text(12px, fmain, 20px, #000, none); 
+                    }
+                }
+                .date-booking {
+                    margin-top: 20px;
+                    .row {
+                        .form {
+                            &-group {
+                                input {
+                                    width: 100%;
+                                    height: 38px;
+                                    border: 1px solid #333;
+                                    outline: none;
+                                }
+                            }
+                        }
+                        .to {
+                            a {
+                                img {
+                                    margin-top: 16px;
+                                    transform: rotate(-90deg);
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-bottom {
+                    .row {
+                        .form {
+                            &-group {
+                                label {
+                                     @include text(12px, fmain, 20px, #000, none); 
+                                     
+                                }
+                                input {
+                                    border: 1px solid #333;
+                                    height: 38px;
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .btn-rental {
+                    margin-top: 70px;
+                    .row {
+                        .btn-about {  
+                            margin-top: 0;   
+                           .btn-booknow {
+                               background: $header-cl;
+                               width: 100px;
+                               h3 {
+                                font-size: 20px;
+                                color: $yellow-cl;
+                            }
+                            &:hover {
+                                background: $yellow-cl;
+                                @include transition(0.4s);
+                                h3 {
+                                    color: $black-cl;
+                                    @include transition(0.4s);
+                                }
+                            }
+                           }
+                           p {
+                               color: #000;
+                                strong {
+                                    font-weight: 800;
+                                }
+                           }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .rental {
+        .wrapper {
+            .container {
+                .row {
+                    .col-lg-4 {
+                        .left {
+                            display: flex;
+                            padding: 0;
+                            background: none;
+                            height: auto;
+                            padding: 30px 0 45px 15px;
+                            .number {
+                                height: 104px;
+                                width: 103px;
+                            }
+                            .text {
+                                margin-left: 25px;
+                                h1, h2, p {
+                                    color: #000;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                    .col-lg-8 {
+                        .right {
+                            margin: 0 0 0 15px;
+                            .row {
+                                .text {
+
+                                }
+                            }
+                        }
+                        .infor {
+                            margin-top: 20px;
+                            .row {
+                                .col-lg-5 {
+                                    .form {
+                                        margin: 0 15px 0 15px;
+                                       .mess {
+                                           display: block;
+                                       } 
+                                    }
+                                }
+                            }
+                        }
+                        .booking {
+                            margin:30px 15px 0 15px;  
+                        }
+                        .studio__rental {
+                            margin:30px 15px 0 15px; 
+                        }
+                        .studio-list {
+                            margin:30px 15px 0 15px;
+                        }
+                        .date-booking {
+                            margin-top: 20px;
+                            .row {
+                                .form {
+                                    &-group {
+                                        input {
+                                            width: 100%;
+                                            height: 38px;
+                                            border: 1px solid #333;
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                                .to {
+                                    a {
+                                        img {
+                                           width: 15px;
+                                           height: 18px;
+                                           transform: rotate(0deg);
+                                           margin: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .btn-rental {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .rental {
+        .wrapper {
+            .container {
+                .row {
+                    .date-booking {
+                        .row {
+                            .to {
+                                a {
+                                    img {
+                                       width: 18px;
+                                       height: 24px;
+                                       margin-top: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

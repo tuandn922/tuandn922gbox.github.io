@@ -1,0 +1,217 @@
+.header {
+    z-index: 1000;
+    width: 100%; 
+    position: relative;
+    // top:0;
+    // left:0;
+    // transition: all 0.4s;
+    // top: 0;
+    &__top {
+        background: $header-cl;
+        height: 70px;
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo {
+                width: 50px;
+            }
+            .link {
+                width: 15px;
+                filter:invert(86%) sepia(50%) saturate(3724%) hue-rotate(358deg) brightness(102%) contrast(103%);
+                img {
+                    height: 19px;
+                }
+            }
+            .btn-mobile {
+                position: relative;
+                width: 30px;
+                height: 20px;
+                cursor: pointer;
+                display: block;
+                z-index: 300;
+                @include transition(0.5s);
+                span {
+                    display: none;
+                    background: $yellow-cl;
+                    width: 100%;
+                    height: 4px;
+                    position: absolute;
+                    border-radius: 5px;
+                    @include transition(0.5s);
+                }
+                .span-1 {
+                    top: 0;
+                }
+                .span-2 {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                .span-3 {
+                    bottom: 0;
+                }
+            }
+            .btn-mobile.open {
+                .span-1{
+                    top: 50%;
+                    transform: rotate(140deg);
+                }
+                .span-2 {
+                    width: 0;
+                    opacity: 0;
+                }
+                .span-3 {
+                    top: 50%;
+                    transform: rotate(-140deg);
+                }
+            }
+        }
+    }
+    &__bottom {
+        height: 70px;
+        // position: relative;
+        .container {
+            border-bottom: 2px solid #d7d7d7;
+            height: 100%;
+            padding: 0;
+            .nav__bar {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                // background: rgba(255, 255, 255, 0.3);
+                .center {
+                    display: flex;
+                    li {
+                        padding: 0 40px;
+                        a{
+                            @include text(12px, Pb, nomal, $text-black-cl, none);
+                            @include transition(0.3s);
+                            &:hover {
+                                color: $yellow-cl;
+                                @include transition(0.3s);
+                            }
+                        }
+                    }
+                }
+                &-list {
+                    li {
+                        a {
+                            @include text(12px, Pb, nomal, $text-black-cl, none);
+                            
+                            @include transition(0.3s);
+                            &:hover {
+                                color: $yellow-cl;
+                                @include transition(0.3s);
+                            }
+                        }
+                      
+                    }
+                }
+               
+            }
+        }
+    }
+    @include mobile {
+        .header {
+            &__top {
+                .container {
+                    .btn-mobile {
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &__bottom {
+                height: 0;
+                .container {
+                    border-bottom: none;
+                    .nav__bar {
+                        padding-top: 70px;
+                        display: block;
+                        width: 70vw;
+                        height: 100vh;
+                        background: $header-cl;
+                        position: fixed;
+                        top: 0px;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 200;
+                        pointer-events: none;
+                        transform:translateX(-100%);
+                        @include transition(1s);
+                        &.active {
+                            transform: translateX(0);
+                            pointer-events: auto;
+                            @include transition(0.5s);
+                        }
+                        &-list {
+                            display: inline-block;
+                            text-align: -webkit-left;
+                            width: 100%;
+                            height: auto;
+                            li {
+                                height: auto;
+                                text-align: left;
+                                display: block;
+                                padding: 15px 0;
+                                max-width: 180px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                @include transition(1s);
+                                a {
+                                    color:$yellow-cl;
+                                    display: inline-block;
+                                    @include text(25px, fmain, nomal, $yellow-cl, none);
+                                }
+                                &:hover {     
+                                    a {
+                                        transform:translateX(20px);
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        .center {
+                            display: inline-block;
+                            height: auto;
+                            width: 100%;
+                            li {
+                                // padding: 15px 0;
+                                a {
+                                    color:$yellow-cl;
+                                    display: inline-block;
+                                }
+                                &:hover {     
+                                    a {
+                                        transform:translateX(20px);
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+        
+                    }
+                }
+            }
+        }
+    }
+    @include tablet {
+        .header {
+            &__bottom {
+                .container {
+                    .nav__bar {
+                        .center {
+                            li {
+                                // padding: 0 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.about {
+    .wrap {
+        width: 100%;
+        height: 700px;
+        background: url(../img/background-about.jpg) no-repeat center;
+        background-size: cover;
+        .container {
+            .row {
+                .content {
+                    margin-top: 100px;
+                    .title {
+                        h2 {
+                             @include text(36px, Pb, 50px, $yellow-cl, none);
+                             letter-spacing: 10px;;
+                        }
+                    }
+                    .text {
+                        p {
+                            @include text(18px, fmain, 40px, $white-cl, none);
+                            margin-top: 5px;
+                        }
+                    }
+                    .btn-about {
+                        display: flex;
+                        margin-top: 50px;
+                        .btn-booknow {                
+                                width: 100px;
+                                height: 100px;
+                                background:$yellow-cl;
+                                border-radius: 10px;
+                                @include midflex();
+                                cursor: pointer;
+                            h3 {  
+                             @include text(27px, Pb, 30px, $black-cl, none); 
+                            }
+                        }
+                        p {
+                            @include text(14px, fmain, 20px, $white-cl, none);
+                            margin-left: 20px; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile {
+    .about {
+        .wrap {
+            background: url(../img/background-about-mobile.jpg) no-repeat center;
+            background-size: cover;
+            height: 100%;
+            .container {
+                .row {
+                    .content {
+                
+                        .text {
+                            p {
+                                @include text(16px, fmain, 34px, $white-cl, none);
+                                text-align: justify;  
+                            }
+                        }
+                        .btn-about {
+                            padding-bottom: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

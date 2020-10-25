@@ -1,0 +1,183 @@
+.footer {
+	// margin-top: 30px;
+	&__top {
+		padding: 15px 0;
+		.row {
+			p {
+				@include text(12px, fmain, nomal, $text-black-cl, uppercase);
+				padding: 10px 0;
+				letter-spacing: 1px;
+			}
+			.phone {
+				display: flex;
+				margin-top: 35px;
+				&__text {
+					margin-right: 30px;
+				}
+			}
+			.info {
+				display: none;
+			}
+			.compl {
+				p {
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+	&__bottom {
+		padding-top: 20px;
+		padding-bottom: 130px;
+		background-color: $yellow-cl;
+		p {
+			@include text(12px, fmain, 30px, $text-black-cl, uppercase);
+			margin: 10px 0;
+		}
+		.right {
+			padding-left: 0;
+			display: flex;
+			.form {
+				&-group {
+					padding: 5px 0;
+					label {
+						@include text(12px, fmain, nomal, $text-black-cl, none);
+					}
+					input {
+						width: 100%;
+						height: 30px;
+						border: none;
+						outline: none;
+						border-bottom: 1px solid #000;
+						background: none;
+					}
+					.p-error {
+						@include text(12px, fmain, nomal, red, none);
+					}
+				
+				}
+				.error {
+					border: 1px solid red;
+				}
+			}
+			.f-2 {
+				// margin-left: 20px;
+				position: relative;
+				.btn-submid {
+					position: absolute;
+					width: 52px;
+					height: 24px;
+					background: #000;
+					border-radius: 3px;
+					color: #fff;
+					font-size: 12px;
+					position: absolute;
+					display:inline-flex;
+					align-items: center;
+					justify-content: center;
+					right: 0;
+					cursor: pointer;
+					border: none;
+					outline: none;
+					margin: 20px 12px 0 0;
+					&:hover {
+						background: #fff;
+						color: #000;
+						@include transition( 0.4s);
+					}
+				}
+			}
+			
+		}
+		.backtotop {
+			margin-top: 50px;
+			
+			img{
+				width: 18px;
+				height: 23px;
+				cursor: pointer;
+				position: relative;
+				@include transition(all 0.4s);
+				top: 0;
+				&:hover {
+					top: -14px;
+				}
+			}
+			p {
+				padding-bottom: 100px;
+				text-align: center;
+				@include text(12px, Pb, nomal, $text-black-cl, uppercase);
+			}
+		}
+		
+	}
+	.footer-contact {
+		margin-top: 0;
+	}
+	// @include desktop {
+		
+	// }
+	@include tablet {
+	.footer {
+		&-bottom {
+			.container {
+				.row {
+					.right {
+						.f-2 {
+							.form-group {
+								.mess {
+									overflow: hidden;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	}
+	@include mobile {
+		.footer {
+			&__top {
+				.container {
+					.row {
+						.col-lg-6 {
+							text-align: center;
+							.phone {
+								justify-content: center;
+								margin-top: 0;
+							}
+							.info {
+								display: block;
+							}
+						}
+						.compl {
+							display: none;
+						}
+					}
+				}
+			}
+			&__bottom {
+				.container {
+					.row {
+						.contact {
+							display: none;
+						}
+						.col-lg-6 {
+							display: none;
+						}
+						.right {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	
+	}
+	// @include mobile-xxs {
+		
+	// }
+	@include tablet {
+		
+	}
+}

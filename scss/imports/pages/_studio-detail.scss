@@ -1,0 +1,406 @@
+.detail__studio {
+    .wrapper {
+        .container {
+            border-bottom: 1px solid #000;
+            .row {
+                padding: 0 15px;
+                .backall {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: 35px 0;
+                    a {
+                        display: flex;
+                        @include text(12px, fmain, none, $text-black-cl, none);
+                        img {
+                            height: 15px;
+                            margin-left: 20px;
+                            transform: rotate(90deg);
+                            position: relative;
+                            @include transition(all 0.4s);
+                            left: 0;
+                        }
+                    }
+                    &:hover {
+                        img {
+                            left: -10px;
+                        }
+                    }
+                }
+            }
+        }
+        .detail__text {
+           display: flex;
+           justify-content: space-between;
+           padding: 0 20px 60px 20px;
+           .number {
+            width: 120px;
+            height: 118px;
+            background-color: $yellow-cl;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            &-01 {
+                    @include mid();
+                   h3 {
+                    @include text(11px, Pb, nomal, $text-black-cl, none);
+                   }
+                p {
+                    font-size: 30px;
+                    @include text(60px, fstudio, nomal, $text-black-cl, none);
+                }
+            }
+           }
+           .dimension {
+            h3 {
+                @include text(12px, fmain, 20px, black, none);
+            }
+            p {
+                @include text(14px, fmain, 20px, black, none);
+            }
+           }
+           .icon {
+               margin-top: 30px;
+               a {
+                   display: flex;
+                   @include text(12px, fmain, 20px, black, none);
+                   img {
+                    width: 16px;
+                    height: 18px;
+                    transform: rotate(90deg);
+                    margin-left: 20px;
+                    
+                   }
+
+               }
+               
+           }
+           .down {
+               img {
+                filter: invert(1)
+               }
+           }
+           .btn-detail {
+               display: flex;
+                .prev {
+                    margin-right: 50px;
+                    display: flex;
+                    cursor: pointer;
+                   @include text(12px, fmain, 20px, black, none);
+                   img {
+                    width: 18px;
+                    height: 14px;
+                    transform: rotate(90deg);  
+                   }
+                }
+                .next {
+                   display: flex;
+                    position: relative;
+                    cursor: pointer;
+                   @include text(12px, fmain, 20px, black, none);      
+                     img {
+                         width: 18px;
+                         height: 14px;
+                         transform: rotate(-90deg);
+                         
+                     }
+                     &:before {
+                         content: "";
+                         width: 1px;
+                         height: 12px;
+                         display: block;
+                         background-color: #000;
+                         position: absolute;
+                         right: 70px;
+                         top: 5px;
+                     }
+                   
+                 }
+                //  img {
+                //      margin-top: 4px;
+                //  }
+           }
+            
+        }
+        .wrap__image {
+            width: 100%;
+            height: 100%;
+            &-item {
+                width: 100%;
+                height: 477px;
+                overflow: hidden;
+                position:relative;
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    img {
+                        min-width: 100%;
+                        min-height: 100%;
+                        @include mid();
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+        ol {
+            li {
+                display: none;
+            }
+        }
+        
+    }
+    .title {
+        padding: 30px 0;
+        .container {
+            .row {
+                h3 {
+                    @include text(32px, Pb, 30px, #39382f, none);
+                }
+            }
+        }
+    }
+    .text {
+        .container {
+            .row {
+                p {
+                    @include text(14px, Fmain, 20px, #39382f, none);
+                }
+            }
+        }
+    }
+    .price {
+        margin-top: 30px;
+        .container {
+            .row {
+                .price-item {
+                    border: 1px solid #000;
+                    margin-right: 20px;
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 20px 30px;
+                        
+                        p {
+                            @include text(14px, Fmain, 20px, #39382f, none);
+                        }
+                    }
+                    .border {
+                        border-bottom: 1px solid #000;
+                    }
+                }
+                .img-item {
+                    a {
+                        img {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .specs {
+        margin-top: 30px;
+        .container {
+            .row {
+                h3 {
+                    @include text(32px, Pb, 30px, #2d2e2e, none);
+                }
+            }
+        }
+    }
+    .specs-text {
+        margin-top: 30px;
+        .container {
+            .row {
+               .text-dimension {
+                   padding-bottom: 20px;
+               }
+               p {
+                   padding-bottom: 30px;
+                   @include text(14px, Fmain, 20px, #39382f, none);
+               }
+            }
+        }
+    }
+    .arrow {
+        margin-top: 30px;
+        .container {
+            .arrow-down {
+                @include keyframes(down) {
+                    0% {
+                        @include transform(translateY(0px));
+                        opacity: 0;
+                        @include transition(0.4s);
+                    }
+                    100% {
+                        @include transform(translateY(10px));
+                        opacity: 1;
+                        @include transition(0.4s);
+                    }
+                }
+                a {
+                    img {
+                        width: 24px;
+                        height: 18px;
+                    }
+                }
+                .arrow-detail {
+                    @include animation(down 1s ease both infinite);
+                }
+            }
+        }
+    }
+    .btn-detail {
+        margin-bottom: 70px;
+        .container {
+            .row {
+                .btn-about {
+                    margin-top: 20px;
+                    .btn-booknow {
+                        margin-left: 18px;
+                        background:#525355;
+                        h3 {
+                            color: $yellow-cl ;
+                        }
+                        &:hover {
+                            background: $yellow-cl;
+                            @include transition(0.4s);
+                            h3 {
+                                color: $black-cl;
+                                @include transition(0.4s);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile {
+    .detail__studio {
+        .wrapper {
+            .container {
+                padding: 0;
+                border-bottom: none;
+              .detail__text {
+                  padding: 0;
+                  justify-content: flex-start;
+                  .dimension {
+                    margin-left: 30px;
+                  }
+                  .down, .full, .btn-detail {
+                      display: none;
+                  }
+              }
+            }
+            .wrap__image {
+                width: 100%;
+                height: 223px;
+                &-item {
+                    width: 100%;
+                    height: 223px;
+                    overflow: hidden;
+                    position:relative;
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        img {
+                            min-width: 100%;
+                            min-height: 100%;
+                            @include mid();
+                            object-fit: cover;
+                        }
+                    }
+                }
+            } 
+        }
+        .title {
+            .container {
+                .row {
+                }
+            }
+        }
+        .price {
+            .container {
+                .row {
+                    .price-item {
+                        margin-bottom: 40px;
+                        margin-right: 0;
+                    }
+                    .img-item {
+                        a {
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btn-detail {
+            .container {
+                .row {
+                    .btn-about {
+                        .btn-booknow {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .detail__studio {
+        .wrapper {
+            .container {
+                .detail__text {
+                    .number {
+                        width: 104px;
+                        height: 103px;
+                    }
+                    .dimension {
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                    .icon {
+                        a {
+                            img {
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                    .btn-detail {
+                        .prev {
+                            margin-right: 20px;
+                        }
+                        .next {
+                            &:before {
+                                right: 60px;
+                            }
+                        }
+                        img {
+                            width: 15px;
+                            height: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-detail {
+            .container {
+                .row {
+                    .btn-about {
+                        .btn-booknow {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

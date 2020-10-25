@@ -1,0 +1,91 @@
+.workpage {
+   .container {
+    .btn-work {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn-booknow {
+            display: flex;
+            p {
+                @include text(14px, fmain, 20px, $black-cl, none);
+                text-align: end;
+                margin-right: 20px;
+            }
+            h3 {
+            width: 100px;
+            height: 100px;
+            background:$header-cl;
+            border-radius: 10px;
+            @include midflex();
+            cursor: pointer;
+            @include text(27px, Pb, 30px, $yellow-cl, none); 
+            }
+        }
+        .allwork__text {
+            margin-left: 200px;
+            text-align: center;
+            a {
+            @include text(12px, fmain, 22px, $text-black-cl, none);
+            display: block;
+            max-width: 100%;
+                img {
+                    position: relative;
+                    margin-top: 10px;
+                    width: 24px;
+                    height: 16px;
+                    transition: all 0.4s;
+                    top: 0;
+                    display: block;
+                }
+                &:hover {
+                    img {
+                        top: 15px;
+                    }
+                }
+           
+            }
+        }
+    }
+   } 
+}
+@include mobile {
+    .workpage {
+        .work {
+            .container {
+                .btn-work {
+                    display: block;
+                    .allwork__text {
+                        margin: 0;
+                    }
+                    .btn-booknow {
+                        margin-top: 50px;
+                        display: block;
+                        p {
+                            margin: 0;
+                            text-align: center;
+                            margin-bottom: 5px;
+                        }
+                        h3 {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .workpage {
+        .tabs {
+            .container {
+                .tabs__img {
+                    .row {
+                        .none {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

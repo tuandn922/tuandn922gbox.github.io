@@ -1,0 +1,111 @@
+.contact {
+    .wrap {
+        width: 100%;
+        height: 460px;
+        background: url(../img/bannercoffegbox.jpg) no-repeat center;
+        background-size: cover;
+        .container {
+            .row {
+                .logo-contact {
+                    margin-top: 90px;
+                    img {
+                        width: 102px;
+                        height: 127px;
+                        filter: invert(1);
+                    }
+                }
+            }
+            .contact-inf {
+                .row {
+                    .inf-left {
+                        @include text(12px, fmain, 30px, $white-cl, uppercase);
+                        text-align: end;
+                    }
+                    .inf-right {
+                        @include text(12px, fmain, 30px, $white-cl, uppercase);
+                        .email-inf {
+                            display: flex;
+                            .mail {
+                                margin-left: 20px;
+                            }
+                        }
+                        .phone {
+                            display: flex;
+                            margin-top: 30px;
+                            &__text {
+                                margin-right: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .allwork {
+            margin-top: 100px;
+            @include keyframes(down) {
+                0% {
+                    @include transform(translateY(0px));
+                    opacity: 0;
+                    @include transition(0.4s);
+                }
+                100% {
+                    @include transform(translateY(10px));
+                    opacity: 1;
+                    @include transition(0.4s);
+                }
+            }
+            &__text {
+                img {
+                    width: 24px;
+                    height: 18px;
+                    filter: invert(1);
+                }
+            } 
+            .arrow-dow {
+                @include animation(down 1s ease both infinite);
+            } 
+        }
+    }
+   
+}
+
+@include mobile {
+    .contact {
+        .wrap {
+            background: url(../img/background-contact-mobile.jpg) no-repeat center;
+            background-size: cover;
+            .container {
+                .row {
+                    .logo-contact {
+                        display: none;
+                    }
+                }
+                .contact-inf {
+                    margin-top: 125px;
+                    .row {
+                        .inf-left {
+                            text-align: center;
+                        }
+                        .inf-right {
+                            text-align: center;
+                            .email-inf {
+                                display: block;
+                                .mail {
+                                    margin: 0;
+                                }
+                            }
+                            .phone {
+                                margin: 0;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .allwork {
+                display: none;
+            }
+        }
+    }
+}

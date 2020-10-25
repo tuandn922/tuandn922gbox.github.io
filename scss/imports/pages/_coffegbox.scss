@@ -1,0 +1,214 @@
+.cafegbox {  
+    .wrapper {width: 100%;
+        background: url(../img/bannercoffegbox.jpg) no-repeat center;
+        background-size: cover;
+     
+        .container {
+            .introduce {
+                padding: 85px 0;
+                text-align: center;
+                display: inline-block;
+                h3 {
+                      @include text(14px, fmain, 22px, #fbdb01, none);
+                      letter-spacing: 2px;
+                }
+                h2 {
+                     @include text(20px, Pb, 30px, #fbdb01, none);
+                     letter-spacing: 4px;
+                     margin-top: 30px;
+                }
+                p {
+                    @include text(12px, fmain, 22px, $white-cl, none);
+                    margin-top: 30px;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 320px;
+                    height: 1px;
+                    background:#fbdb01;
+                    position: absolute; 
+                    left: 50%;
+                    bottom: 55px;
+                    transform: translateX(-50%);
+                }
+               
+            }
+          
+        }
+    }
+    .gellary {
+        margin-top: -42px;
+        h3 {
+            @include text(14px, fmain, 22px,#eaeae7 , none);
+            letter-spacing: 2px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .slider {
+            background: #19191a;
+            &__item {
+                .gallery__carousel{
+                    .carousel-img {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(3,1fr);
+                        grid-auto-rows: 240px;
+                        grid-gap:20px;
+                        .image {
+                            // width: 100%;
+                            a {
+                                display: flex;
+                                height: 100%;
+                                justify-content: center;
+                            }
+                        }
+                        .img1 {
+                            grid-column-start: 1;
+                            grid-row-start: 1;
+                            grid-row-end: 3;
+                            overflow: hidden;
+                         
+                        }
+                        .img2 {
+                            grid-column-start: 2;
+                            grid-row-start: 1;
+                            grid-column-end: 4; 
+                            overflow: hidden;  
+                                        
+                        }
+                        .img3 {
+                            overflow: hidden;
+                          
+                        }
+                        .img4 {
+                            overflow: hidden;
+                            
+                        }
+                        img {
+                            height: 100%;
+                            max-width: inherit;
+                            filter: grayscale(100%);
+                            -webkit-filter: grayscale(100%);
+                            -moz-filter: grayscale(100%);
+                            @include transition(0.4s);
+                            &:hover {
+                                filter: grayscale(0);
+                                -webkit-filter: grayscale(0);
+                                -moz-filter: grayscale(0);
+                                @include transition(0.4s);
+                            }
+                        }
+                    }
+                    ol {
+                        li {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .btn-slider {
+                display: flex;
+                padding: 40px 0 80px 0;
+                .prev {
+                    margin-right: 60px;
+                   @include midflex();
+                   cursor: pointer;
+                    img {
+                        width: 18px;
+                        height: 14px;
+                        transform: rotate(90deg);
+                        filter:invert(86%) sepia(50%) saturate(3724%) hue-rotate(358deg) brightness(120%) contrast(130%);       
+                    }    
+                }
+                .next {
+                   @include midflex();
+                   position: relative;
+                   cursor: pointer;
+                    span {
+                        @include text(12px, fmain, 22px, #fbdb01, none);
+                        
+                    }
+                    img {
+                        width: 18px;
+                        height: 14px;
+                        transform: rotate(-90deg);
+                        filter:invert(86%) sepia(50%) saturate(3724%) hue-rotate(358deg) brightness(120%) contrast(130%);  
+                    }   
+                    &:before {
+                        content: "";
+                        width: 1px;
+                        height: 12px;
+                        display: block;
+                        background-color: #fbdb01;
+                        position: absolute;
+                        right: 75px;
+                        top: 5px;
+                    }
+                  
+                }
+            }
+        }
+    }
+    
+    .creer {
+        background: $white-cl;
+        margin-top: 60px;
+        .container {
+            .creer__content {
+                text-align: center;
+                h3 {
+                @include text(14px, fmain, 22px,#171717 , none);
+                }
+                p {
+                    @include text(12px, fmain, 22px,#171717 , none);
+                }
+            }
+        }
+    }
+}
+@include mobile {
+    .cafegbox {
+        .wrapper {
+            background: url(../img/background-mobile.jpg) no-repeat center center;
+            background-size: cover;
+            .container {
+                .introduce {
+
+                }
+            }
+        }
+        .gellary {
+            .slider {
+                .container {
+                    padding: 5px 5px;
+                    .slider__item {
+                        .gallery__carousel {
+                            .carousel-img {
+                               display: block;
+                                .image {
+                                  padding: 5px 0;
+                                  height: 240px;
+                                }
+                                .img1{
+                                    display: none;
+                                }
+                                .img3, .img4 {
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            
+                            }
+                        }
+                    }
+                    .btn-slider {
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        
+    }
+}
